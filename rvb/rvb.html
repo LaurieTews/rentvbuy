@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rent or Buy?</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="rvb.css" type="text/css">
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body>
+<div id="header">
+	<h1>RENT VS BUY</h1>
+</div>
+<div class="container">
+	<div class="col-lg-6 col-md-6 col-sm-6">
+		<div class="sections">
+			<h2>Economic Information</h2><br>
+			<form name="economicForm">
+			  <div class="form-group">
+			    <label>Average Inflation Rate</label>
+			    <div class="input-group">
+			      <div class="input-group-addon">%</div>
+			      <input id="inflation" type="text" class="form-control validate" placeholder="Percentage">
+			    </div>
+			  </div>
+			   <div class="form-group">
+			    <label>Expected Rate Of Return</label>
+			    <p>This is the yearly percentage amount you would expect to recieve by investing your money. Use 7% for index funds.<p>
+			    <div class="input-group">
+			      <div class="input-group-addon">%</div>
+			      <input type="text" id="rateOfReturn" class="form-control validate" placeholder="Percentage">
+			    </div>
+			  </div>
+			</form>
+		</div>
+		<div class="sections">
+		<h2>Rental Costs</h2><br>
+			<form>
+			  <div class="form-group">
+			    <label>Weekly Rental Payment</label>
+			    <div class="input-group">
+			      <div class="input-group-addon">$</div>
+			      <input type="text" id="rentalPayment" class="form-control validate" placeholder="Amount">
+			    </div>
+			  </div><br>
+			</form>
+		</div>
+	</div>
+	<div class="col-lg-6 col-md-6 col-sm-6">
+		<div class="sections">
+			<h2>Purchase Information</h2>
+			<form>
+			  <div class="form-group">
+			    <label>Purchase Price</label>
+			    <div class="input-group">
+			      <div class="input-group-addon">$</div>
+			      <input type="text" id="purchasePrice" class="form-control validate" placeholder="Amount">
+			    </div>
+			  </div>
+			   <div class="form-group">
+			    <label>Expected Capital Growth Rate</label>
+			    <div class="input-group">
+			      <div class="input-group-addon">%</div>
+			      <input type="text" id="capitalGrowth" class="form-control validate" placeholder="Percentage">
+			    </div>
+			  </div>
+			   <div class="form-group">
+			    <label>Yearly Rates</label>
+			    <div class="input-group">
+			      <div class="input-group-addon">$</div>
+			      <input type="text" id="rates" class="form-control validate" placeholder="Amount" value="0">
+			    </div>
+			  </div>
+			   <div class="form-group">
+			    <label>Yearly Insurance</label>
+			    <div class="input-group">
+			      <div class="input-group-addon">$</div>
+			      <input type="text" id="insurance" class="form-control validate" placeholder="Amount" value="0">
+			    </div>
+			  </div>
+			   <div class="form-group">
+			    <label>Yearly Maintenance</label>
+			    <div class="input-group">
+			      <div class="input-group-addon">$</div>
+			      <input type="text" id="maintenance" class="form-control validate" placeholder="Amount" value="0">
+			    </div>
+			  </div>
+<!-- SWITCH -->
+		    <div class="switch-field">
+		      <div class="switch-title">Are you planning on taking a mortgage?</div>
+		      <input type="radio" id="switch_left" name="switch_2" value="yes" />
+		      <label for="switch_left">Yes</label>
+		      <input type="radio" id="switch_right" name="switch_2" value="no" checked/>
+		      <label for="switch_right">No</label>
+		    </div>
+			</form>
+		</div>
+	</div>
+		<!-- DROPDOWN SECTION -->
+	<div class="col-lg-12 col-md-12 col-sm-12">
+		<div id="dropdown">
+			<div id="mortgageSection" class="sections">
+				<h2 id="mortgageHeader">Mortgage Information</h2><br>
+				<form class="form-inline">
+				 	<div class="form-group">
+				    	<label class="mortgageLabel">Loan Amount</label>
+				    	<div class="input-group">
+				      	<div class="input-group-addon">$</div>
+				      		<input type="text" id="loanAmount" class="form-control validateMortgage" placeholder="Amount">
+				    	</div>
+				  	</div>
+				  	<div id="mortgageRight1" class="form-group">
+				    	<label class="mortgageLabel">Mortgage Rate</label>
+				    	<div class="input-group">
+				      		<div class="input-group-addon">%</div>
+				      		<input type="text" id="mortgageRate" class="form-control validateMortgage" placeholder="Percentage">
+				   		</div>
+				 	</div>
+			  		<div class="form-group">
+			    		<label class="mortgageLabel term">Term of Loan</label>
+			   			<select id="termOfLoan" class="form-control validateMortgage">
+						  <option>1</option>
+						  <option>2</option>
+						  <option>3</option>
+						  <option>4</option>
+						  <option>5</option>
+						  <option>6</option>
+						  <option>7</option>
+						  <option>8</option>
+						  <option>9</option>
+						  <option>10</option>
+						  <option>11</option>
+						  <option>12</option>
+						  <option>13</option>
+						  <option>14</option>
+						  <option>15</option>
+						  <option>16</option>
+						  <option>17</option>
+						  <option>18</option>
+						  <option>19</option>
+						  <option>20</option>
+						  <option>21</option>
+						  <option>22</option>
+						  <option>23</option>
+						  <option>24</option>
+						  <option>25</option>
+						  <option>26</option>
+						  <option>27</option>
+						  <option>28</option>
+						  <option>29</option>
+						  <option>30</option>
+						</select>
+			  		</div>
+				</form><br>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="alert alert-danger alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  Make sure you've entered all the details! Inputs must not contain characters 
+</div>
+<button type="button" id="calculateBtn" class="btn btn-primary btn-lg">Calculate</button>
+<div id="chart_div" class="hide"></div>
+<script type="text/javascript" src="rvb.js"></script>
+</body>
+</html>
