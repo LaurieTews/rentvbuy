@@ -222,24 +222,6 @@ function drawChart() {
    var data = google.visualization.arrayToDataTable([
   
         ['Year', 'Rent', 'Buy'],
-    /*  ['5',  npvArray[0], 0],
-        ['6',  npvArray[1], 0],
-        ['7',  npvArray[2], 0],
-        ['8',  npvArray[3], 0],
-        ['9',  npvArray[4], 0],
-        ['10', npvArray[5], 0],
-        ['11', npvArray[6], 0],
-        ['12', npvArray[7], 0],
-        ['13', npvArray[8], 0],
-        ['14', npvArray[9], 0],
-        ['15', npvArray[10], 0],
-        ['16',  npvArray[11], 0],
-        ['17', npvArray[12], 0],
-        ['18', npvArray[13], 0],
-        ['19', npvArray[14], 0],
-        ['20', npvArray[15], 0]
-        ]);
-*/
         ['5',  rent[0], buy[0]],
         ['6',  rent[1], buy[1]],
         ['7',  rent[2], buy[2]],
